@@ -1,21 +1,27 @@
 # stations-api
 
+A demo application for searching the nearest station using latitude and longitude.
+
 緯度と経度から最寄りの駅を検索するAPIデモアプリケーション。
 
-## 構成
+## Structure / 構成
 
-- `src/app.ts`: アプリケーションのエントリーポイント
-- `src/scripts/importStations.ts`: 駅情報をデータベースにインポートするスクリプト
-- `src/scripts/checkConnection.ts`: データベース接続をチェックするスクリプト
+- `src/app.ts`: Entry point of the application / アプリケーションのエントリーポイント
+- `src/scripts/importStations.ts`: Script to import station data into the database. / 駅情報をデータベースにインポートするスクリプト
+- `src/scripts/checkConnection.ts`: Script to check the database connection. / データベース接続をチェックするスクリプト
 
-## 必要な環境設定
+## Environment Settings / 環境設定
+
+Set the following environment variables in a `.env` file:
 
 `.env`ファイルに以下の環境変数を設定してください:
 
   - `PORT=3000`: サーバーがリッスンするポート番号
   - `MONGODB_URI=mongodb://exampleuser:examplepassword@mongo.741fjiu.mongodb.net`: MongoDBの接続URI
 
-## 実行方法
+## How to Run / 実行方法
+
+Start the application with the following command:
 
 以下のコマンドでアプリケーションを起動します。
 
@@ -23,7 +29,10 @@
 npm run start
 ```
 
+Test Command
+
 テストコマンド
+
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"lat":41.8,"lon":143.7}' http://localhost:3000/nearest-station
 
